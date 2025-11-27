@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Head content same as before -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADR Teknik AC Yogyakarta | Service AC Rumah & Mobil Profesional</title>
+    <meta name="description" content="ADR Teknik AC melayani service, perbaikan, instalasi, dan penjualan AC baru di Yogyakarta. Kami juga melayani service AC mobil. Profesional dan bergaransi.">
+    <link href="fonts.googleapis.com" rel="stylesheet">
+    <style>
+        /* Styles remain the same */
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; padding-top: 130px; scroll-behavior: smooth; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 15px; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .fixed-header-container { position: fixed; top: 0; left: 0; width: 100%; background-color: white; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        header { background-color: #007bff; color: white; padding: 15px 20px; text-align: center; border-radius: 0; }
+        header h1 { margin: 0; font-size: 1.5rem; }
+        nav { background-color: #0056b3; padding: 10px 0; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        .content-section { padding: 20px; }
+        .cta-button { background-color: #ff9800; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 15px; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .service-card { background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; border: 1px solid #ddd; }
+        .service-card h3 { color: #007bff; margin-top: 0; }
+        .contact-form-section { padding: 20px; background-color: #e9ecef; border-radius: 8px; margin-top: 20px; }
+        .contact-form-section h2 { color: #007bff; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"], textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .submit-btn { background-color: #28a745; color: white; padding: 15px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; }
+        .submit-btn:hover { background-color: #218838; }
+        .article-link-card { background: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #ddd; margin-top: 15px; }
+        .article-link-card a { color: #007bff; text-decoration: none; font-weight: bold; }
+        footer { text-align: center; padding: 20px 0; font-size: 0.9rem; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="fixed-header-container">
+        <div class="container">
+            <header>
+                <h1>ADR Teknik AC Yogyakarta</h1>
+            </header>
+            <nav>
+                <a href="index.html">Beranda</a>
+                <a href="#layanan-utama">Layanan Kami</a>
+                <a href="shop.html">Toko AC (Katalog)</a>
+                <a href="faq.html">FAQ</a>
+                <!-- Tautan sekarang mengarah ke halaman kontak baru -->
+                <a href="hubungi-kami.html">Hubungi Kami</a> 
+            </nav>
+        </div>
+    </div>
+    <!-- Konten halaman index.html lainnya tetap sama -->
+    <div class="container">
+        <div class="content-section">
+            <h2>Selamat Datang di ADR Teknik AC</h2>
+            <p>Kami adalah solusi terpercaya untuk segala kebutuhan pendingin ruangan Anda di wilayah Daerah Istimewa Yogyakarta. Kami melayani perbaikan **AC rumah** dan juga **AC mobil**. Kami fokus pada kepuasan pelanggan dengan layanan yang cepat dan bergaransi.</p>
+            <h2 id="layanan-utama">Layanan Utama Kami</h2> 
+            <div class="service-grid">
+                <div class="service-card"><h3>Service AC Rumah</h3><p>Perbaikan segala jenis kerusakan AC rumah.</p></div>
+                <div class="service-card"><h3>Cuci AC Rumah</h3><p>Perawatan berkala untuk menjaga udara tetap sehat.</p></div>
+                <div class="service-card"><h3>Service AC Mobil</h3><p>Perbaikan, isi freon, dan perawatan AC mobil Anda.</p></div>
+                <div class="service-card"><h3>Pasang AC Baru</h3><p>Instalasi unit baru atau pindah lokasi dengan rapi.</p></div>
+            </div>
+            <a href="shop.html" class="cta-button">Lihat Katalog Toko AC Rumah Kami &rarr;</a>
+        </div>
+        
+        <div class="content-section">
+            <h2>Info & Tips Seputar AC</h2>
+            <div class="article-link-card"><a href="artikel-ac-rumah.html">Baca Artikel: Tips Memilih AC Rumah yang Tepat & Hemat Listrik</a></div>
+            <div class="article-link-card"><a href="artikel-ac-mobil.html">Baca Artikel: 7 Tips Perawatan AC Mobil Agar Tetap Dingin & Awet</a></div>
+        </div>
+
+        <div class="contact-form-section">
+            <h2>Butuh Service Cepat Hari Ini?</h2>
+            <p>Isi formulir di bawah ini, teknisi kami akan segera menghubungi Anda melalui WhatsApp.</p>
+            <form id="serviceForm">
+                <div class="form-group"><label for="name">Nama Lengkap:</label><input type="text" id="name" required></div>
+                <div class="form-group"><label for="problem">Keluhan/Masalah AC (Rumah/Mobil):</label><textarea id="problem" rows="3" required></textarea></div>
+                <button type="submit" class="submit-btn">Kirim Pesanan Service via WhatsApp</button>
+            </form>
+        </div>
+
+        <footer>
+            &copy; 2025 ADR Teknik AC Yogyakarta.
+        </footer>
+    </div>
+    <script>
+        // JavaScript for form submission remains the same
+        document.getElementById('serviceForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const problem = document.getElementById('problem').value;
+            const whatsappNumber = '62812xxxxxx'; 
+            const message = `Halo ADR Teknik AC,\n\nSaya ingin memesan jasa service AC.\n\nNama: ${name}\nKeluhan: ${problem}\n\nMohon dibantu segera. Terima kasih.`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `wa.me{whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Situs Web Anda</title>
+    <style>
+        /* Gaya CSS dasar agar tampilan sedikit rapi */
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 800px;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #000;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button, .back-button { /* Menambahkan gaya untuk tombol kembali */
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none; /* Menghapus garis bawah pada tautan */
+            display: inline-block; /* Memungkinkan padding diterapkan */
+            margin-top: 10px;
+        }
+        button:hover, .back-button:hover {
+            background-color: #45a049;
+        }
+        .map-container {
+            margin-top: 30px;
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+        .map-container iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- TOMBOL KEMBALI KE HALAMAN UTAMA (ATAS) -->
+        <a href="index.html" class="back-button">← Kembali ke Halaman Utama</a>
+
+        <h1>Hubungi Kami</h1>
+        <p>Kami senang mendengar kabar dari Anda! Silakan gunakan informasi di bawah ini atau formulir kontak untuk menghubungi kami.</p>
+
+        <!-- BAGIAN 1: DETAIL KONTAK -->
+        <h2>Informasi Kontak</h2>
+        <div class="contact-info">
+            <p><strong>Alamat Email:</strong> info@namadomainanda.com</p>
+            <p><strong>Telepon/WhatsApp:</strong> +62 812 3456 7890</p>
+            <p><strong>Alamat Fisik:</strong> Jl. Contoh No. 123, Kota Anda, Kode Pos 12345</p>
+            <p><strong>Jam Operasional:</strong> Senin - Jumat, 09:00 - 17:00 WIB</p>
+        </div>
+
+        <!-- BAGIAN 2: FORMULIR KONTAK (Pastikan endpoint Formspree sudah benar) -->
+        <h2>Kirim Pesan</h2>
+        <form action="formspree.io" method="POST">
+            <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Alamat Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Pesan Anda</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Kirim Pesan</button>
+        </form>
+
+        <!-- BAGIAN 3: PETA GOOGLE MAPS (Pastikan kode iframe sudah benar) -->
+        <h2>Lokasi Kami</h2>
+        <div class="map-container">
+            <!-- GANTI DENGAN KODE IFRAME GOOGLE MAPS ANDA DI SINI -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.055867601413!2d110.4651668737274!3d-7.889224278476394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a537b29072b43%3A0xa7b5b1491a880b79!2sService%20Ac%20Jogja%2C%20Sleman%2C%20Bantul%2C%20Yogyakarta%20--ADR%20TEKNIK--!5e0!3m2!1sid!2sid!4v1764239397603!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+        <!-- TOMBOL KEMBALI KE HALAMAN UTAMA (BAWAH) -->
+        <a href="index.html" class="back-button">← Kembali ke Halaman Utama</a>
+
+    </div>
+
+</body>
+</html>

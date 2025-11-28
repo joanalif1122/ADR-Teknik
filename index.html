@@ -136,6 +136,11 @@
             const whatsappURL = `wa.me{whatsappNumber}?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
         });
-    <script src="./sw.js"></script>
+<script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(reg => console.log('Service worker registered successfully:', reg))
+                .catch(err => console.error('Service worker registration failed:', err));    
+<script src="./sw.js"></script>
 </body>
 </html>

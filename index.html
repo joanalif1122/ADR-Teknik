@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
+</div>
+
 <head>
+<!-- Penempatan Jam Digital -->
+<div class="digital-clock-container">
+    <div class="clock-display" id="clock-display">
+        <!-- Waktu akan ditampilkan di sini -->
+    </div>
+    <div class="date-display" id="date-display">
+        <!-- Tanggal akan ditampilkan di sini -->
+    </div>
+
     <base href="/ADR-Teknik/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +24,23 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     </head>
     <style>
+.digital-clock-container {
+        text-align: center;
+        padding: 20px 0;
+        background-color: #f8f9fa; /* Sesuaikan dengan background website Anda */
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .clock-display {
+        font-size: 2em;
+        font-weight: bold;
+        color: #007bff; /* Warna utama website Anda */
+    }
+    .date-display {
+        font-size: 0.9em;
+        color: #6c757d;
+        margin-top: 5px;
+    }
         body { 
             font-family: 'Roboto', sans-serif; 
             line-height: 1.6; 
@@ -147,5 +175,34 @@
          });
        }    
 <script src="./sw.js"></script>
+<script>
+    function updateClock() {
+        const now = new Date();
+        
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const timeString = `${hours}:${minutes}:${seconds} WIB`; // Menambahkan WIB
+
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = now.toLocaleDateString('id-ID', options);
+
+        // Memperbarui elemen HTML yang sudah ada
+        const clockElement = document.getElementById('clock-display');
+        const dateElement = document.getElementById('date-display');
+        
+        if (clockElement && dateElement) {
+            clockElement.textContent = timeString;
+            dateElement.textContent = dateString;
+        }
+    }
+
+    // Memperbarui jam setiap 1 detik
+    setInterval(updateClock, 1000);
+    updateClock(); // Memanggil fungsi pertama kali
+</script>
+</body>
+</html>
+
 </body>
 </html>

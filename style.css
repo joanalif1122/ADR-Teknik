@@ -59,3 +59,28 @@ button:hover, .back-button:hover {
     color: #6c757d;
     margin-top: 5px;
 }
+/* --- Gaya untuk Navigasi Utama --- */
+.main-nav ul {
+    list-style-type: none; /* Menghapus bullet point */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Menata item secara horizontal */
+    justify-content: center; /* Menengahkan menu */
+    background-color: #007bff; /* Warna latar belakang navigasi */
+    border-radius: 5px;
+}
+
+.main-nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none; /* Menghapus garis bawah */
+    transition: background-color 0.3s; /* Efek halus saat hover */
+}
+
+.main-nav li a:hover {
+    background-color: #0056b3; /* Warna saat kursor diarahkan */
+    border-radius: 5px;
+}
+

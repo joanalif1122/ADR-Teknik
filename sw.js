@@ -1,54 +1,32 @@
-// Nama cache versi 1. Ubah ke v2 jika Anda mengupdate file website.
-const CACHE_NAME = 'adrteknik-cache-v1';
-
-// DAFTAR ASET YANG HARUS DISIMPAN DALAM CACHE
-// MOHON SESUAIKAN DENGAN NAMA FILE DAN LOKASI ANDA DI NETLIFY
-const ASSETS_TO_CACHE = [
-  '/', 
-  '/index.html',
-  '/manifest.json',
-  // >>> TAMBAHKAN JALUR FILE LOGO ANDA DI BAWAH INI <<<
-  '/icons/icon-192x192.png', // Contoh: Ganti dengan nama file logo Anda
-  '/icons/icon-512x512.png', // Contoh: Ganti dengan nama file logo Anda
-  // >>> JANGAN LUPA TANDA KOMA DI AKHIR SETIAP BARIS <<<
+const CACHE_NAME = 'pwa-adr-cache-v1';
+const urlsToCache = [
+  '/ADR-Teknik/',
+  '/ADR-Teknik/index.html',
+  '/ADR-Teknik/manifest.json',
+  '/ADR-Teknik/icons/icon-192x192.png',
+  '/ADR-Teknik/icons/icon-512x512.png',
+  '/ADR-Teknik/assets/css/style.css',
+  // Tambahkan path file lain yang perlu di-cache di sini
 ];
 
-// --- JANGAN RUBAH KODE DI BAWAH INI ---
-
-// Event: Menginstal Service Worker
-self.addEventListener('install', (event) => {
+self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log('Service Worker: Caching required assets');
-      return cache.addAll(ASSETS_TO_CACHE);
-    }).catch((err) => {
-      console.error('Service Worker: Cache addAll failed during install', err);
-    })
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
   );
 });
 
-// Event: Mengaktifkan Service Worker (membersihkan cache lama)
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((keyList) => {
-      return Promise.all(keyList.map((key) => {
-        if (key !== CACHE_NAME) {
-          console.log('Service Worker: Removing old cache', key);
-          return caches.delete(key);
-        }
-      }));
-    })
-  );
-});
-
-// Event: Mengambil (Fetch) aset (strategi cache-first)
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', function(event) {
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      if (response) {
-        return response;
-      }
-      return fetch(event.request);
-    })
+    caches.match(event.request)
+      .then(function(response) {
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      })
   );
 });

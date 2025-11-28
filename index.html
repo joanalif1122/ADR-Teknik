@@ -147,7 +147,8 @@
         });
       <script src="./sw.js"></script>
 
-    <script>
+        <script>
+        // --- BLOK KODE 1: PENDAFTARAN PWA SERVICE WORKER ---
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
                 navigator.serviceWorker.register('/ADR-Teknik/sw.js', {scope: '/ADR-Teknik/'})
@@ -158,6 +159,8 @@
                     });
             });
         }
+
+        // --- BLOK KODE 2: FUNGSI JAM DIGITAL ---
         function updateClock() {
             const now = new Date();
             const hours = now.getHours().toString().padStart(2, '0');
@@ -173,9 +176,14 @@
                 dateElement.textContent = dateString;
             }
         }
+        
+        // Panggil fungsi pertama kali
+        updateClock(); 
+        
+        // Memperbarui jam setiap 1 detik
         setInterval(updateClock, 1000);
-        updateClock();
 
     </script>
 </body>
 </html>
+

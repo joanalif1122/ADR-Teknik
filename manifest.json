@@ -1,8 +1,8 @@
 {
-  "name": "ADR Teknik Yogyakarta",
-  "short_name": "ADR TEKNIK",
+  "name": "ADR Teknik",
+  "short_name": "ADR",
   "description": "Spesialis Pendingin dan Tata Udara", 
-  "start_url": "/index.html",
+  "start_url": "/ADR-Teknik/index.html",
   "id": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",

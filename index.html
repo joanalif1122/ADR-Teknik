@@ -139,11 +139,10 @@
 <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', function() {
-           navigator.serviceWorker.register('./sw.js').then(function(registration) {
-             console.log('Service worker registered successful with scope:', registration.scope);
-            }, function(err) {
-              console.error('Service worker registration failed:', err);
-           });
+            navigator.serviceWorker.register('/ADR-Teknik/sw.js').then(function(registration) {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+      console.log('ServiceWorker registration failed: ', err);
          });
        }    
 <script src="./sw.js"></script>

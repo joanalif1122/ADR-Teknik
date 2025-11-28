@@ -7,12 +7,14 @@
 <div class="digital-clock-container">
     <div class="clock-display" id="clock-display">
         <!-- Waktu akan ditampilkan di sini -->
-    </div>
+     </div>
     <div class="date-display" id="date-display">
         <!-- Tanggal akan ditampilkan di sini -->
     </div>
 
     <base href="/ADR-Teknik/">
+    <link rel="stylesheet" href="style.css"> 
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADR Teknik AC Yogyakarta | Service AC Rumah & Mobil Profesional</title>
@@ -24,33 +26,6 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     </head>
     <style>
-.digital-clock-container {
-        text-align: center;
-        padding: 20px 0;
-        background-color: #f8f9fa; /* Sesuaikan dengan background website Anda */
-        border-radius: 8px;
-        margin-bottom: 20px;
-    }
-    .clock-display {
-        font-size: 2em;
-        font-weight: bold;
-        color: #007bff; /* Warna utama website Anda */
-    }
-    .date-display {
-        font-size: 0.9em;
-        color: #6c757d;
-        margin-top: 5px;
-    }
-        body { 
-            font-family: 'Roboto', sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #f4f4f4; 
-            padding-top: 170px;
-            scroll-behavior: smooth;
-        }
         .container { max-width: 900px; margin: 0 auto; padding: 0 15px; }
         .fixed-header-container { position: fixed; top: 0; left: 0; width: 100%; background-color: white; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .announcement-bar-24h { background-color: #dc3545; color: white; padding: 8px 0; text-align: center; font-weight: bold; font-size: 0.9rem; overflow: hidden; }
@@ -92,6 +67,11 @@
     </style>
 </head>
 <body>
+<div class="digital-clock-container">
+    <div class="clock-display" id="clock-display"></div>
+    <div class="date-display" id="date-display"></div>
+</div>
+
     <div class="fixed-header-container">
         <div class="announcement-bar-24h"><marquee behavior="scroll" direction="left" scrollamount="6"><span class="icon">⏰</span> LAYANAN SERVICE AC 24 JAM DI YOGYAKARTA! <span class="icon">⏰</span></marquee></div>
         <div class="announcement-bar"><marquee behavior="scroll" direction="left" scrollamount="5"><span class="icon">🚚</span> GRATIS ONGKIR area Yogyakarta! (Syarat & Ketentuan Berlaku) <span class="icon">🚚</span></marquee></div>
@@ -165,44 +145,37 @@
             const whatsappURL = `wa.me{whatsappNumber}?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
         });
-<script>
+      <script src="./sw.js"></script>
+
+    <script>
         if ('serviceWorker' in navigator) {
-          window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/ADR-Teknik/sw.js', {scope: '/ADR-Teknik/'}).then(function(registration) {
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }).catch(function(err) {
-      console.log('ServiceWorker registration failed: ', err);
-         });
-       }    
-<script src="./sw.js"></script>
-<script>
-    function updateClock() {
-        const now = new Date();
-        
-        const hours = now.getHours().toString().padStart(2, '0');
-        const minutes = now.getMinutes().toString().padStart(2, '0');
-        const seconds = now.getSeconds().toString().padStart(2, '0');
-        const timeString = `${hours}:${minutes}:${seconds} WIB`; // Menambahkan WIB
-
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        const dateString = now.toLocaleDateString('id-ID', options);
-
-        // Memperbarui elemen HTML yang sudah ada
-        const clockElement = document.getElementById('clock-display');
-        const dateElement = document.getElementById('date-display');
-        
-        if (clockElement && dateElement) {
-            clockElement.textContent = timeString;
-            dateElement.textContent = dateString;
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/ADR-Teknik/sw.js', {scope: '/ADR-Teknik/'})
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope); 
+                    }).catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
         }
-    }
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds} WIB`;
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = now.toLocaleDateString('id-ID', options);
+            const clockElement = document.getElementById('clock-display');
+            const dateElement = document.getElementById('date-display');
+            if (clockElement && dateElement) {
+                clockElement.textContent = timeString;
+                dateElement.textContent = dateString;
+            }
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
 
-    // Memperbarui jam setiap 1 detik
-    setInterval(updateClock, 1000);
-    updateClock(); // Memanggil fungsi pertama kali
-</script>
-</body>
-</html>
-
+    </script>
 </body>
 </html>

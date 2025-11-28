@@ -1,0 +1,61 @@
+/* Import font Poppins dari Google Fonts untuk logo dan tampilan elegan */
+@import url('fonts.googleapis.com');
+
+/* --- Gaya untuk Logo Berbasis Teks (ADR Teknik) --- */
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 800; /* Tebal untuk ADR */
+    color: #333; /* Warna teks utama, sesuaikan jika background gelap */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo strong {
+    color: #007bff; /* Warna aksen biru, sesuaikan dengan warna utama web Anda */
+    font-weight: 600; /* Sedikit lebih tipis dari ADR */
+}
+
+/* Jika Anda ingin logo selalu kembali ke beranda saat diklik */
+.logo a {
+    text-decoration: none;
+    color: inherit; /* Menggunakan warna yang sudah diatur di atas */
+}
+
+
+/* --- Gaya untuk Tombol Kembali (di halaman Hubungi Kami, dll) --- */
+.back-button, button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Menghapus garis bawah pada tautan */
+    display: inline-block; /* Memungkinkan padding diterapkan */
+    margin-top: 10px;
+}
+
+button:hover, .back-button:hover {
+    background-color: #45a049;
+}
+
+
+/* --- Gaya untuk Jam Digital (di halaman Index) --- */
+.digital-clock-container {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f8f9fa; /* Sesuaikan dengan background website Anda */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.clock-display {
+    font-size: 2em;
+    font-weight: bold;
+    color: #007bff; /* Warna utama website Anda */
+}
+.date-display {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 5px;
+}

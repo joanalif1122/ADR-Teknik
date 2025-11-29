@@ -128,7 +128,8 @@
                         <label for="problem">Keluhan/Masalah AC:</label>
                         <textarea id="problem" rows="3" required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Kirim Pesanan Service via WhatsApp</button>
+                     <a href="https://wa.me/6282135925528" class="btn btn-utama">Hubungi via WhatsApp</a>
+
                 </form>
             </div>
         </div>
@@ -146,7 +147,7 @@
             const whatsappNumber = '6282135925528'; 
             const message = `Halo ADR Teknik AC,\n\nSaya ingin memesan jasa service AC.\n\nNama: ${name}\nKeluhan: ${problem}\n\nMohon dibantu segera. Terima kasih.`;
             const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `wa.me{whatsappNumber}?text=${encodedMessage}`;
+            const whatsappURL = `wa.me{6282135925528}?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
         });
       <script src="./sw.js"></script>

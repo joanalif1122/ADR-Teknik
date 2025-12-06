@@ -40,6 +40,13 @@ button:hover, .back-button:hover {
     background-color: #45a049;
 }
 
+.container {
+  width: 100%; /* Gunakan lebar penuh yang tersedia */
+  max-width: 1000px; /* Batasi lebar maksimum hanya di layar besar */
+  margin: auto;
+  padding: 0 15px; /* Tambahkan sedikit padding agar konten tidak menempel di tepi layar ponsel */
+}
+
 
 /* --- Gaya untuk Jam Digital (di halaman Index) --- */
 .digital-clock-container {

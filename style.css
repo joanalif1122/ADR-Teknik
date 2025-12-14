@@ -123,40 +123,23 @@ button:hover, .back-button:hover {
     border: 0;
 }
 
+/* Pastikan elemen utama tidak memiliki lebar tetap yang besar */
 .container {
-    /* width: 1000px; <-- HINDARI INI */
-    width: 90%;      /* Gunakan persentase */
-    max-width: 1200px; /* Batasi lebar maksimum di layar besar */
-    margin: 0 auto;  /* Pusatkan kontainer */
+    width: 90%;          /* Menggunakan 90% dari lebar viewport */
+    max-width: 1000px;   /* Batas maksimum di layar besar */
+    margin: 0 auto;
 }
 
+/* Pastikan semua gambar mengecil sesuai ukuran layar */
 img {
-    /* width: 300px; <-- HINDARI INI */
-    max-width: 100%; /* Gambar akan mengecil sesuai kontainer */
-    height: auto;    /* Menjaga rasio aspek gambar */
+    max-width: 100%;     /* Tidak akan melebihi lebar viewport */
+    height: auto;        /* Menjaga rasio gambar */
 }
 
-/* Gaya default untuk layar besar (desktop) */
-.kolom-kiri {
-    width: 50%;
-    float: left;
-}
-
-.kolom-kanan {
-    width: 50%;
-    float: right;
-}
-
-/* --- MEDIA QUERY: Diterapkan HANYA jika lebar layar MAKSIMAL 600px (Ponsel) --- */
+/* Gunakan Media Query untuk menyesuaikan tata letak pada lebar layar tertentu */
 @media screen and (max-width: 600px) {
-    .kolom-kiri, .kolom-kanan {
-        width: 100%; /* Kolom akan memenuhi layar penuh */
-        float: none; /* Hapus float agar menumpuk secara vertikal */
+    body {
+        font-size: 16px; /* Menyesuaikan ukuran font untuk kenyamanan membaca di HP */
     }
-    
-    nav ul li {
-        display: block; /* Tombol navigasi menjadi blok vertikal */
-        width: 100%;
-    }
+    /* Tambahkan aturan lain di sini untuk HP */
 }
-

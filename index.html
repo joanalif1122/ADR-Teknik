@@ -128,7 +128,7 @@
                         <label for="problem">Keluhan/Masalah AC:</label>
                         <textarea id="problem" rows="3" required></textarea>
                     </div>
-                     <a href="https://wa.me/6282135925528" class="btn btn-utama">Hubungi via WhatsApp</a>
+                     <a href="https://wa.me/6285726067833" class="btn btn-utama">Hubungi via WhatsApp</a>
 
                 </form>
             </div>
@@ -144,10 +144,10 @@
             const name = document.getElementById('name').value;
             const problem = document.getElementById('problem').value;
             // GANTI NOMOR WHATSAPP DI BAWAH INI DENGAN NOMOR ANDA
-            const whatsappNumber = '6282135925528'; 
+            const whatsappNumber = '6285726067833'; 
             const message = `Halo ADR Teknik AC,\n\nSaya ingin memesan jasa service AC.\n\nNama: ${name}\nKeluhan: ${problem}\n\nMohon dibantu segera. Terima kasih.`;
             const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `wa.me{6282135925528}?text=${encodedMessage}`;
+            const whatsappURL = `wa.me{6285726067833}?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
         });
       <script src="./sw.js"></script>
@@ -177,7 +177,7 @@
             const clockElement = document.getElementById('clock-display');
             const dateElement = document.getElementById('date-display');
             if (clockElement && dateElement) {
-                clockElement.textContent = timeString;
+                clockElement.textContent = timeString; 
                 dateElement.textContent = dateString;
             }
         }

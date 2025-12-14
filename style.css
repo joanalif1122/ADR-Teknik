@@ -122,3 +122,41 @@ button:hover, .back-button:hover {
     height: 450px;     /* Tinggi tetap */
     border: 0;
 }
+
+.container {
+    /* width: 1000px; <-- HINDARI INI */
+    width: 90%;      /* Gunakan persentase */
+    max-width: 1200px; /* Batasi lebar maksimum di layar besar */
+    margin: 0 auto;  /* Pusatkan kontainer */
+}
+
+img {
+    /* width: 300px; <-- HINDARI INI */
+    max-width: 100%; /* Gambar akan mengecil sesuai kontainer */
+    height: auto;    /* Menjaga rasio aspek gambar */
+}
+
+/* Gaya default untuk layar besar (desktop) */
+.kolom-kiri {
+    width: 50%;
+    float: left;
+}
+
+.kolom-kanan {
+    width: 50%;
+    float: right;
+}
+
+/* --- MEDIA QUERY: Diterapkan HANYA jika lebar layar MAKSIMAL 600px (Ponsel) --- */
+@media screen and (max-width: 600px) {
+    .kolom-kiri, .kolom-kanan {
+        width: 100%; /* Kolom akan memenuhi layar penuh */
+        float: none; /* Hapus float agar menumpuk secara vertikal */
+    }
+    
+    nav ul li {
+        display: block; /* Tombol navigasi menjadi blok vertikal */
+        width: 100%;
+    }
+}
+

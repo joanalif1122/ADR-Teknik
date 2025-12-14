@@ -115,3 +115,10 @@ button:hover, .back-button:hover {
     background-color: #1DA851; /* Warna hijau lebih gelap saat di-hover */
     transform: translateY(-2px); 
 }
+
+.map-container iframe {
+    width: 100%;       /* Memastikan iframe mengambil lebar penuh dari parent div */
+    max-width: 600px;  /* Batasi lebar maksimum sesuai keinginan */
+    height: 450px;     /* Tinggi tetap */
+    border: 0;
+}
